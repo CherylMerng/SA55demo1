@@ -72,4 +72,10 @@ public class PersonController {
         personService.updatePerson(p);
         return "redirect:/persons/list";
     }
+
+    @PostMapping(value = "/deletePerson")   //value here is optional, but put it for clarity.///
+    public String deletePerson(@ModelAttribute(value="person") Person p){
+        personService.removePerson(p);
+        return "redirect:/persons/list";
+    }
 }

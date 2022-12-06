@@ -24,12 +24,21 @@
             <td th:utext="${person.firstName}"></td>
             <td th:utext="${person.lastName}"></td>
             <td>
-                <form th:action="@{/persons/update}" th:object="${persons}" method="post">
+                <form th:action="@{/persons/updatePerson}" th:object="${persons}" method="post">
                     <input type="hidden" name="id" th:value="${person.id}" />
                     <input type="hidden" name="firstName" th:value="${person.firstName}" />
                     <input type="hidden" name="lastName" th:value="${person.lastName}" />
                     <!-- hidden field -> need to pass data -->
                     <input type="submit" value="Update" />
+                </form>
+            </td>
+            <td>
+                <form th:action="@{/persons/deletePerson}" th:object="${persons}" method="post">
+                    <input type="hidden" name="id" th:value="${person.id}" />
+                    <input type="hidden" name="firstName" th:value="${person.firstName}" />
+                    <input type="hidden" name="lastName" th:value="${person.lastName}" />
+                    <!-- hidden field -> need to pass data -->
+                    <input type="submit" value="Delete" />
                 </form>
             </td>
         </tr>
